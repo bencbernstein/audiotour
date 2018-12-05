@@ -1,0 +1,14 @@
+[
+  {
+    "id": "0",
+    "audio": "caro-short",
+    "address": "261 Broadway",
+    "coordinates": [40.71393, -74.00699]
+  },
+  {
+    "id": "1",
+    "audio": "caro-short",
+    "address": "305 Broadway",
+    "coordinates": [40.71553, -74.0056]
+  }
+]
