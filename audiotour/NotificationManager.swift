@@ -99,6 +99,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
   }
 
   func sendPlayAudioNotification(_ address: String, next nextAddress: String?) {
+    print("102", address, nextAddress)
     self.nextAddress = nextAddress
     let content = UNMutableNotificationContent()
     content.title = "Destination Reached"

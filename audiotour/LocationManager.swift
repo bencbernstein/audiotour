@@ -2,7 +2,7 @@ import Foundation
 import CoreLocation
 import SwiftyJSON
 
-let RADIUS = 20.0
+let RADIUS = 1.0
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
 
@@ -40,6 +40,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     manager.requestWhenInUseAuthorization()
     manager.requestAlwaysAuthorization()
     manager.delegate = self
+    manager.desiredAccuracy = kCLLocationAccuracyBest
+
   }
 
   private func setupGeofence(_ location: JSON) {
@@ -60,6 +62,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
       let nextLocation =  arr.indices.contains(id + 1) ? arr[id + 1] : nil
       let address = location["address"].stringValue
       let nextAddress = nextLocation["address"].stringValue
+      print("in region, address is", address)
+      print("next address is", nextAddress)
+      print("current", current)
       notificationManager.sendPlayAudioNotification(address, next: nextAddress)
       current += 1
     }
